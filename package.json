@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.23.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@grammyjs/conversations": "github:grammyjs/conversations",
+    "@grammyjs/emoji": "^1.1.0",
+    "@grammyjs/menu": "^1.1.2",
+    "@grammyjs/parse-mode": "^1.4.0",
+    "@grammyjs/ratelimiter": "^1.1.6",
+    "@grammyjs/runner": "^1.0.4",
+    "@grammyjs/storage-file": "^2.0.0",
+    "@grammyjs/storage-free": "^2.0.0",
+    "@grammyjs/storage-mongodb": "^2.0.0",
+    "@grammyjs/storage-supabase": "^2.0.0",
+    "@grammyjs/transformer-throttler": "^1.1.2",
+    "@supabase/supabase-js": "^1.35.7",
+    "@types/pdf-parse": "^1.1.1",
+    "dotenv": "^16.0.2",
+    "grammy": "^1.11.1",
+    "moment": "^2.29.4",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^2.16.105",
+    "tslog": "^3.3.4"
+  }
+}
