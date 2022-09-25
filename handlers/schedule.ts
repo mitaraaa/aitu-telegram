@@ -78,7 +78,10 @@ composer.use(limit(
         },
 
         keyGenerator: (ctx) => {
-            return ctx.from?.id.toString();
+            const chatType = ctx.chat?.type;
+
+            if (chatType == "group" || chatType == "supergroup")
+                return ctx.from?.id.toString();
         },
     }
 ));
