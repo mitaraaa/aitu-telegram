@@ -8,7 +8,7 @@
     "typescript": "^4.8.3"
   },
   "dependencies": {
-    "@grammyjs/conversations": "github:grammyjs/conversations",
+    "@grammyjs/conversations": "^1.0.3",
     "@grammyjs/emoji": "^1.1.0",
     "@grammyjs/menu": "^1.1.2",
     "@grammyjs/parse-mode": "^1.4.0",
