@@ -1,6 +1,7 @@
 /.vscode
 /node_modules
 /sessions
+/dist
 
 .env
 .eslintrc.json

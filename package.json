@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "devDependencies": {
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
@@ -19,6 +20,7 @@
     "@grammyjs/storage-supabase": "^2.0.0",
     "@grammyjs/transformer-throttler": "^1.1.2",
     "@supabase/supabase-js": "^1.35.7",
+    "@types/express": "^4.17.14",
     "@types/pdf-parse": "^1.1.1",
     "dotenv": "^16.0.2",
     "grammy": "^1.11.1",
