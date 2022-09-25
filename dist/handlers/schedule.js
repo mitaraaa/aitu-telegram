@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.schedule = void 0;
 const grammy_1 = require("grammy");
-const conversations_1 = require("@grammyjs/conversations");
+const conversations_1 = require("../conversations");
 const keyboards_1 = require("../keyboards");
 const logger_1 = require("../utils/logger");
 const utils_1 = require("../utils/utils");

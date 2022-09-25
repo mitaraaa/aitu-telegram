@@ -1,5 +1,5 @@
 import { Composer, Context } from "grammy";
-import { conversations, createConversation } from "@grammyjs/conversations";
+import { conversations, createConversation } from "../conversations";
 
 import { pagesMenu } from "../keyboards";
 import { CustomContext, CustomConversation, Lesson } from "../types";

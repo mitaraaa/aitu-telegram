@@ -28,27 +28,32 @@ const dotenv_1 = require("dotenv");
 const grammy_1 = require("grammy");
 const runner_1 = require("@grammyjs/runner");
 const storage_file_1 = require("@grammyjs/storage-file");
-const conversations_1 = require("@grammyjs/conversations");
+const conversations_1 = require("./conversations");
 const logger_1 = require("./utils/logger");
 const utils_1 = require("./utils/utils");
 const handlers_1 = __importStar(require("./handlers"));
 const keyboards_1 = require("./keyboards");
-const bot = new grammy_1.Bot(process.env.TOKEN ?? "");
-bot.use((0, grammy_1.session)({
-    initial: utils_1.initialSession,
-    storage: new storage_file_1.FileAdapter({
-        dirName: "tmp/sessions"
-    })
-}));
-bot.use(keyboards_1.pagesMenu);
-bot.use((0, conversations_1.conversations)());
-bot.use(handlers_1.default);
-bot.api.setMyCommands(handlers_1.commandList);
-const runner = (0, runner_1.run)(bot);
-bot.catch((err) => {
-    logger_1.log.error(err);
-});
-const stopRunner = () => runner.isRunning() && runner.stop();
-process.once("SIGINT", stopRunner);
-process.once("SIGTERM", stopRunner);
-exports.default = bot;
+const start = async () => {
+    const bot = new grammy_1.Bot(process.env.TOKEN ?? "");
+    bot.use((0, grammy_1.session)({
+        initial: utils_1.initialSession,
+        storage: new storage_file_1.FileAdapter({
+            dirName: "sessions"
+        })
+    }));
+    bot.use(keyboards_1.pagesMenu);
+    bot.use((0, conversations_1.conversations)());
+    bot.use(handlers_1.default);
+    await bot.api.setMyCommands(handlers_1.commandList);
+    logger_1.log.debug("Loaded commands list");
+    const runner = (0, runner_1.run)(bot);
+    bot.catch((err) => {
+        logger_1.log.error(err);
+    });
+    const stopRunner = () => runner.isRunning() && runner.stop();
+    process.once("SIGINT", stopRunner);
+    process.once("SIGTERM", stopRunner);
+    await bot.init();
+    logger_1.log.info(`${bot.botInfo.first_name} - Started!`);
+};
+start();
