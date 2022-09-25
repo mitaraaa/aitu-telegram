@@ -5,7 +5,7 @@ import { Bot, session } from "grammy";
 
 import { run } from "@grammyjs/runner";
 import { FileAdapter } from "@grammyjs/storage-file";
-import { conversations } from "@grammyjs/conversations";
+import { conversations } from "./conversations";
 
 import { CustomContext, SessionData } from "./types";
 import { log } from "./utils/logger";
